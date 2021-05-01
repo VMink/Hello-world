@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+nav{
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    -webkit-box-shadow: 0px 10px 20px -9px #000000; 
+    box-shadow: 0px 10px 20px -9px #000000;
+}
+
+.logo{
+    position: relative;
+    width: 36px;
+    height: 36px;
+    margin: 20px 0 10px 16px;
+}
+
+.toggle-btn{
+    position: relative;
+    display: flex;
+    width: 18px;
+    height: 16px;
+    align-items: center;
+    float: right;
+    margin: 32px 19px 16px 0;
+    cursor: pointer;
+}
+
+.toggle-icon{
+    position: relative;
+    background: black;
+    width: 18px;
+    height: 2px;
+    transition: all .5s;
+}
+
+.toggle-icon::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: black;
+    top: 5px;
+    transition: all .5s;
+}
+
+.toggle-icon::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: black;
+    bottom: 5px;
+    transition: all .5s;
+}
+
+.toggle-menu{
+    display: none;
+}
+
+.navbar-links{
+    position: relative;
+    background: #0000EC;
+    max-height: 0;
+    transition: all 0.5s;
+    z-index: -1;
+    margin-top: 10px;
+}
+
+.navbar-links li{
+    list-style: none;
+    padding: 16px;
+}
+
+.navbar-links li a{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+.navbar-links li a:hover{
+    color: #00F3BB;
+    text-decoration: line-through;
+}
+
+.navbar-links li a:active{
+    text-decoration: line-through;
+    color: rgba(6,10,36,0.56);
+}
+
+.toggle-menu:checked ~ .navbar-links{
+    max-height: 240px;
+    z-index: 1;
+}
+
+.toggle-menu:checked ~ .toggle-btn .toggle-icon{
+    background: transparent;
+}
+
+.toggle-menu:checked ~ .toggle-btn .toggle-icon:before{
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.toggle-menu:checked ~ .toggle-btn .toggle-icon:after{
+    transform: rotate(45deg);
+    bottom: 0;
+}
+
+@media all and (min-width: 800px){
+    .toggle-btn{
+        display: none;
+    }
+
+    .navbar-links{
+        display: flex;
+        float: right;
+        max-height: auto;
+        z-index: 1;
+        margin: 13px 6.9% 26px 0;
+    }
+
+    .navbar-links li:nth-child(1),
+    .navbar-links li:nth-child(2),
+    .navbar-links li:nth-child(3){
+        margin: 0 48px 0 0;
+    }
+
+    .navbar-links li a{
+        color: black;
+    }
+
+    .logo{
+        margin: 22px 0 22px 6.9%;
+    }
+}
+
+.titulo{
+    position: relative;
+    margin: 5.1% 0 0 13.9%;
+}
