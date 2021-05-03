@@ -8,6 +8,7 @@
 
 html,body {
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body{
@@ -445,6 +446,7 @@ footer .redes{
 footer .redes i{
     font-size: 18px;
     transition: all .5s;
+    cursor: pointer;
 }
 
 footer .redes i:nth-child(1),
